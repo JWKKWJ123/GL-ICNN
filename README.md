@@ -1,6 +1,6 @@
 # Global and Local Interpretable CNN (GL-ICNN) for AD diagnosis and prediction
 
-preprint: (https://gitlab.com/radiology/neuro/)  
+preprint:  
 
 
 ### Model building
