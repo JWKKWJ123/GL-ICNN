@@ -112,7 +112,7 @@ def showloss(logs,ki,trainstage):
         #plt.plot(logs[:trainstage, 2],color='orange')
         plt.legend(["val_GL-ICNN","val_GL-ICNN"],loc="upper right")
         plt.tight_layout()
-        plt.savefig('plot/_{}.png'.format(ki))
+        plt.savefig('plot/loss_{}.png'.format(ki))
         
 
 '''
@@ -411,12 +411,14 @@ for ki in range(K):
         
       biomarker_list_train = pd.DataFrame(biomarker_list)    
       target_list_train = pd.DataFrame(target_list)
-      
-      
+
+      #For now we don't include the merge of EBMs, so the EBM trained from scratch at every epoch
+      '''
       if change == 1:
            ebm = unmerge_ebm
       else:
            ebm = merge_ebms([ebm, unmerge_ebm])
+      '''
 
       output_pro = ebm.predict_proba(biomarker_list)
       output_pro = output_pro[:,1]
